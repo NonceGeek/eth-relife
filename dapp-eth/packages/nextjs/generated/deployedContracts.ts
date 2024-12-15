@@ -1,114 +1,13 @@
 const contracts = {
   // modifile here.
-  10: [
+  5003: [
     {
-      chainId: "10",
-      name: "optimism",
+      chainId: "5003",
+      name: "mantleTestnet",
       contracts: {
-        vectorTagger: {
-          address: "0xbF3ED49679E75BdA9E5c99954cdFbb7a60D7CE03",
-          abi: [
-            {
-              inputs: [
-                { internalType: "string", name: "_vectorName", type: "string" },
-                { internalType: "string", name: "_vectorDescription", type: "string" },
-              ],
-              stateMutability: "nonpayable",
-              type: "constructor",
-            },
-            {
-              anonymous: false,
-              inputs: [
-                { indexed: false, internalType: "uint256", name: "tagIndex", type: "uint256" },
-                { indexed: false, internalType: "bool", name: "decide", type: "bool" },
-              ],
-              name: "JudgeSet",
-              type: "event",
-            },
-            {
-              anonymous: false,
-              inputs: [
-                { indexed: true, internalType: "address", name: "tagger", type: "address" },
-                { indexed: false, internalType: "uint256", name: "assetId", type: "uint256" },
-                { indexed: false, internalType: "string", name: "metadata", type: "string" },
-              ],
-              name: "TagSet",
-              type: "event",
-            },
-            {
-              inputs: [],
-              name: "chairperson",
-              outputs: [{ internalType: "address", name: "", type: "address" }],
-              stateMutability: "view",
-              type: "function",
-            },
-            {
-              inputs: [],
-              name: "judgeIndex",
-              outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-              stateMutability: "view",
-              type: "function",
-            },
-            {
-              inputs: [
-                { internalType: "uint256", name: "_tagIndex", type: "uint256" },
-                { internalType: "bool", name: "_decide", type: "bool" },
-              ],
-              name: "judgeTag",
-              outputs: [],
-              stateMutability: "nonpayable",
-              type: "function",
-            },
-            {
-              inputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-              name: "judges",
-              outputs: [{ internalType: "bool", name: "", type: "bool" }],
-              stateMutability: "view",
-              type: "function",
-            },
-            {
-              inputs: [],
-              name: "tagIndex",
-              outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-              stateMutability: "view",
-              type: "function",
-            },
-            {
-              inputs: [
-                { internalType: "uint256", name: "_assetId", type: "uint256" },
-                { internalType: "string", name: "_metadata", type: "string" },
-              ],
-              name: "tagItem",
-              outputs: [],
-              stateMutability: "nonpayable",
-              type: "function",
-            },
-            {
-              inputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-              name: "tags",
-              outputs: [
-                { internalType: "uint256", name: "assetId", type: "uint256" },
-                { internalType: "string", name: "metadata", type: "string" },
-                { internalType: "address", name: "creator", type: "address" },
-              ],
-              stateMutability: "view",
-              type: "function",
-            },
-            {
-              inputs: [],
-              name: "vectorDescription",
-              outputs: [{ internalType: "string", name: "", type: "string" }],
-              stateMutability: "view",
-              type: "function",
-            },
-            {
-              inputs: [],
-              name: "vectorName",
-              outputs: [{ internalType: "string", name: "", type: "string" }],
-              stateMutability: "view",
-              type: "function",
-            },
-          ],
+        relife: {
+          address: "0x545EDf91e91b96cFA314485F5d2A1757Be11d384",
+          abi: [{"inputs":[{"internalType":"address","name":"initialOwner","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"userAddress","type":"address"},{"indexed":false,"internalType":"uint256","name":"id","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"timestamp","type":"uint256"}],"name":"AccountCreated","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"userAddress","type":"address"},{"indexed":false,"internalType":"uint256","name":"lifeId","type":"uint256"},{"indexed":false,"internalType":"bytes1","name":"eve","type":"bytes1"}],"name":"LifeEventAdded","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"userAddress","type":"address"},{"indexed":false,"internalType":"uint256","name":"lifeId","type":"uint256"},{"components":[{"internalType":"int256","name":"x","type":"int256"},{"internalType":"int256","name":"y","type":"int256"},{"internalType":"int256","name":"z","type":"int256"}],"indexed":false,"internalType":"struct ReLife.Position","name":"position","type":"tuple"}],"name":"LifeInitialized","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"accounts","outputs":[{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"address","name":"userAddress","type":"address"},{"internalType":"uint256","name":"lifeCount","type":"uint256"},{"internalType":"uint256","name":"lastUpdated","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"generateLife","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"generateRandomEvent","outputs":[{"internalType":"bytes1","name":"","type":"bytes1"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"_address","type":"address"}],"name":"getAccount","outputs":[{"components":[{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"address","name":"userAddress","type":"address"},{"internalType":"uint256","name":"lifeCount","type":"uint256"},{"internalType":"uint256","name":"lastUpdated","type":"uint256"}],"internalType":"struct ReLife.Account","name":"","type":"tuple"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"_address","type":"address"}],"name":"getAllLives","outputs":[{"components":[{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"accountId","type":"uint256"},{"internalType":"bytes1[]","name":"lifeEvents","type":"bytes1[]"},{"internalType":"uint256","name":"lifeNumber","type":"uint256"},{"internalType":"uint256","name":"lastUpdated","type":"uint256"},{"components":[{"internalType":"int256","name":"x","type":"int256"},{"internalType":"int256","name":"y","type":"int256"},{"internalType":"int256","name":"z","type":"int256"}],"internalType":"struct ReLife.Position","name":"position","type":"tuple"}],"internalType":"struct ReLife.Life[]","name":"","type":"tuple[]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"x","type":"uint256"}],"name":"getEvents","outputs":[{"internalType":"string[]","name":"","type":"string[]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"_address","type":"address"}],"name":"getLatestLife","outputs":[{"components":[{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"accountId","type":"uint256"},{"internalType":"bytes1[]","name":"lifeEvents","type":"bytes1[]"},{"internalType":"uint256","name":"lifeNumber","type":"uint256"},{"internalType":"uint256","name":"lastUpdated","type":"uint256"},{"components":[{"internalType":"int256","name":"x","type":"int256"},{"internalType":"int256","name":"y","type":"int256"},{"internalType":"int256","name":"z","type":"int256"}],"internalType":"struct ReLife.Position","name":"position","type":"tuple"}],"internalType":"struct ReLife.Life","name":"","type":"tuple"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getScript","outputs":[{"internalType":"string[][]","name":"","type":"string[][]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"x","type":"uint256"},{"internalType":"uint256","name":"y","type":"uint256"}],"name":"getSpecEvent","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getTotalLivesCount","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"initAccount","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"listIndex","type":"uint256"},{"internalType":"string","name":"arTxId","type":"string"}],"name":"insertEvent","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"string[][]","name":"_script","type":"string[][]"}],"name":"insertFullScript","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"},{"internalType":"uint256","name":"","type":"uint256"}],"name":"lives","outputs":[{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"accountId","type":"uint256"},{"internalType":"uint256","name":"lifeNumber","type":"uint256"},{"internalType":"uint256","name":"lastUpdated","type":"uint256"},{"components":[{"internalType":"int256","name":"x","type":"int256"},{"internalType":"int256","name":"y","type":"int256"},{"internalType":"int256","name":"z","type":"int256"}],"internalType":"struct ReLife.Position","name":"position","type":"tuple"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"},{"internalType":"uint256","name":"","type":"uint256"}],"name":"script","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalLives","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"}],
         },
       },
     },

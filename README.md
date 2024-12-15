@@ -1,4 +1,4 @@
-# AO-Dimension-life
+# ETH-Dimension-life
 
 The 1st Pet Game on AO.
 

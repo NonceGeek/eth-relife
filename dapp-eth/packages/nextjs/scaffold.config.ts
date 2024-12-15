@@ -1,7 +1,7 @@
-import * as chains from "wagmi/chains";
+import { Chain } from "wagmi";
 
 export type ScaffoldConfig = {
-  targetNetwork: chains.Chain;
+  targetNetwork: Chain;
   pollingInterval: number;
   alchemyApiKey: string;
   walletConnectProjectId: string;
@@ -11,7 +11,31 @@ export type ScaffoldConfig = {
 
 const scaffoldConfig = {
   // The network where your DApp lives in
-  targetNetwork: chains.optimism,
+  targetNetwork: {
+    id: 5003,
+    name: "mantleTestnet",
+    network: "mantleTestnet",
+    nativeCurrency: {
+      name: "Mantle",
+      symbol: "MNT",
+      decimals: 18,
+    },
+    rpcUrls: {
+      default: {
+        http: ["https://rpc.sepolia.mantle.xyz"],
+      },
+      public: {
+        http: ["https://rpc.sepolia.mantle.xyz"],
+      },
+    },
+    blockExplorers: {
+      default: {
+        name: "Etherscan",
+        url: "https://sepolia.mantlescan.xyz/",
+      },
+    },
+    testnet: true,
+  } as Chain,
 
   // The interval at which your front-end polls the RPC servers for new data
   // it has no effect on the local network

@@ -21,17 +21,17 @@ export const ContractData = () => {
   const greetingRef = useRef<HTMLDivElement>(null);
 
   const { data: totalCounter } = useScaffoldContractRead({
-    contractName: "VectorDBProposalGovernancer",
+    contractName: "Relife",
     functionName: "totalCounter",
   });
 
   const { data: currentGreeting, isLoading: isGreetingLoading } = useScaffoldContractRead({
-    contractName: "VectorDBProposalGovernancer",
+    contractName: "Relife",
     functionName: "greeting",
   });
 
   useScaffoldEventSubscriber({
-    contractName: "VectorDBProposalGovernancer",
+    contractName: "Relife",
     eventName: "GreetingChange",
     listener: logs => {
       logs.map(log => {
@@ -46,7 +46,7 @@ export const ContractData = () => {
     isLoading: isLoadingEvents,
     error: errorReadingEvents,
   } = useScaffoldEventHistory({
-    contractName: "VectorDBProposalGovernancer",
+    contractName: "Relife",
     eventName: "GreetingChange",
     fromBlock: process.env.NEXT_PUBLIC_DEPLOY_BLOCK ? BigInt(process.env.NEXT_PUBLIC_DEPLOY_BLOCK) : 0n,
     filters: { greetingSetter: address },
@@ -55,8 +55,8 @@ export const ContractData = () => {
 
   console.log("Events:", isLoadingEvents, errorReadingEvents, myGreetingChangeEvents);
 
-  const { data: VectorDBProposalGovernancer } = useScaffoldContract({ contractName: "VectorDBProposalGovernancer" });
-  console.log("VectorDBProposalGovernancer: ", VectorDBProposalGovernancer);
+  const { data: Relife } = useScaffoldContract({ contractName: "Relife" });
+  console.log("Relife: ", Relife);
 
   const { showAnimation } = useAnimationConfig(totalCounter);
 

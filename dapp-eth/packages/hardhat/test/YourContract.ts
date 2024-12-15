@@ -1,28 +1,28 @@
 import { expect } from "chai";
 import { ethers } from "hardhat";
-import { VectorDBProposalGovernancer } from "../typechain-types";
+import { Relife } from "../typechain-types";
 
-describe("VectorDBProposalGovernancer", function () {
+describe("Relife", function () {
   // We define a fixture to reuse the same setup in every test.
 
-  let VectorDBProposalGovernancer: VectorDBProposalGovernancer;
+  let Relife: Relife;
   before(async () => {
     const [owner] = await ethers.getSigners();
-    const VectorDBProposalGovernancerFactory = await ethers.getContractFactory("VectorDBProposalGovernancer");
-    VectorDBProposalGovernancer = (await VectorDBProposalGovernancerFactory.deploy(owner.address)) as VectorDBProposalGovernancer;
-    await VectorDBProposalGovernancer.deployed();
+    const RelifeFactory = await ethers.getContractFactory("Relife");
+    Relife = (await RelifeFactory.deploy(owner.address)) as Relife;
+    await Relife.deployed();
   });
 
   describe("Deployment", function () {
     it("Should have the right message on deploy", async function () {
-      expect(await VectorDBProposalGovernancer.greeting()).to.equal("Building Unstoppable Apps!!!");
+      expect(await Relife.greeting()).to.equal("Building Unstoppable Apps!!!");
     });
 
     it("Should allow setting a new message", async function () {
       const newGreeting = "Learn Scaffold-ETH 2! :)";
 
-      await VectorDBProposalGovernancer.setGreeting(newGreeting);
-      expect(await VectorDBProposalGovernancer.greeting()).to.equal(newGreeting);
+      await Relife.setGreeting(newGreeting);
+      expect(await Relife.greeting()).to.equal(newGreeting);
     });
   });
 });
